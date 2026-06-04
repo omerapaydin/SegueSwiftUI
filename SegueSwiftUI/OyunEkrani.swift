@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct OyunEkrani: View {
+    @Environment(\.presentationMode) var pm
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing:100){
+            Button("Bitti"){
+                
+            }
+            Button("Geri"){
+                pm.wrappedValue.dismiss()
+            }
+        }.navigationTitle("Oyun")
     }
 }
 

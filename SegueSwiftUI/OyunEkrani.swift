@@ -9,15 +9,19 @@ import SwiftUI
 
 struct OyunEkrani: View {
     @Environment(\.presentationMode) var pm
+    @State private var sonucEkranınaGecis = false
     var body: some View {
         VStack(spacing:100){
             Button("Bitti"){
-                
+                sonucEkranınaGecis = true
             }
             Button("Geri"){
                 pm.wrappedValue.dismiss()
             }
-        }.navigationTitle("Oyun")
+        }.navigationTitle("Oyun")   
+            .sheet(isPresented: $sonucEkranınaGecis){
+            SonucEkrani()
+    }
     }
 }
 
